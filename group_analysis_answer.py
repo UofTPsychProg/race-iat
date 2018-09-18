@@ -8,14 +8,34 @@ scene-cat problem set for PSY 1210 - Fall 2018
 
 #%% import block 
 import numpy as np
-import scipy as sp
+from scipy import stats
+import os
+import shutil
 
 
 #%%
-# read in data file: subject_summary_num.csv
+# copy files from testing room folders to raw data, rename files to include
+# testing room letter in the filename
+#
+testingrooms = ['A','B','C']
+for room in testingrooms:
+    roomdir = 'testingroom{}'.format(room)
+    srcpath = os.path.join(roomdir,'experiment_data.csv')
+    dstfile = 'experiment_data_{}.csv'.format(room)
+    dstpath = os.path.join('rawdata',dstfile)
+    shutil.copyfile(srcpath,dstpath)
+
+
+#%%
+# read in all the data files in rawdata directory using a for loop
 # columns: subject, category, congruency, accuracy, median RT
 #
-data = np.loadtxt('subject_summary_num.csv',delimiter=',',skiprows=1)
+data = np.empty((0,5))
+for room in testingrooms:
+    datafile = 'experiment_data_{}.csv'.format(room)
+    datapath = os.path.join('rawdata',datafile)
+    tmp = np.loadtxt(datapath,delimiter=',')
+    data = np.append(data,tmp,axis=0)
 
 
 #%%
@@ -77,13 +97,13 @@ for ct in [1,2]:
 #
 ixc = np.all([data[:,1]==1,data[:,2]==1],axis=0)
 ixi = np.all([data[:,1]==1,data[:,2]==2],axis=0)
-man_acc_ttest = sp.stats.ttest_rel(data[ixc,3],data[ixi,3])
-man_mrt_ttest = sp.stats.ttest_rel(data[ixc,4],data[ixi,4])
+man_acc_ttest = stats.ttest_rel(data[ixc,3],data[ixi,3])
+man_mrt_ttest = stats.ttest_rel(data[ixc,4],data[ixi,4])
 
 ixc = np.all([data[:,1]==2,data[:,2]==1],axis=0)
 ixi = np.all([data[:,1]==2,data[:,2]==2],axis=0)
-nat_acc_ttest = sp.stats.ttest_rel(data[ixc,3],data[ixi,3])
-nat_mrt_ttest = sp.stats.ttest_rel(data[ixc,4],data[ixi,4])
+nat_acc_ttest = stats.ttest_rel(data[ixc,3],data[ixi,3])
+nat_mrt_ttest = stats.ttest_rel(data[ixc,4],data[ixi,4])
 
 
 #%%
