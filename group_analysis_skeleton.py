@@ -37,7 +37,7 @@ mrt_avg = ...
 
 
 #%%
-# calculate averages split by category using a for loop and an if statement!
+# calculate averages (accuracy & RT) split by category using a for loop and an if statement!
 # (i.e., loop through the data to make a sum for each condition, then divide by
 # the number of data points going into the sum)
 #
@@ -45,7 +45,7 @@ mrt_avg = ...
 
 
 #%%
-# calculate averages split by congruency using indexing, slicing, and 
+# calculate averages (accuracy & RT)split by congruency using indexing, slicing, and 
 # numpy's mean function (hint: only one line of code is needed per average)
 #
 acc_con = ...
@@ -55,7 +55,7 @@ mrt_inc = ...
 
 
 #%% 
-# calculate averages for interaction (category x congruency)
+# calculate averages (accuracy & RT)for interaction (category x congruency)
 # by using for loops and indexing/slicing!
 # hint: check out np.all() for combining multiple conditionals in an index
 #
@@ -67,7 +67,7 @@ for ct in [1,2]:
 
 
 #%%        
-# compare congruency conditions within categories using scipy's paired-sample 
+# compare congruency conditions' effect on accuracy and RT within categories using scipy's paired-sample 
 # t-test: scipy.stats.ttest_rel()
 #
 ...
