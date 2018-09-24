@@ -10,7 +10,7 @@ Here's a quick description of the experiment behind the data: 23 participants ca
 We provide the summary data for each participant (including their accuracy and median reaction time (RT) for each of the four conditions (natural vs. man-made scenes crossed with congruent vs. incongruent objects). Since the data was collected in three different testing rooms, these summary data files (all named experiment_data.csv) are separated into three different directories (testingroom{A,B,C}). Each file contains data from 7 or 8 participants. 
 
 ## Your task
-Using python code, you need to: 
+Fill in the missing sections of the skeleton analysis script with python code in order to: 
 1. Copy these files into the rawdata directory, renaming each file to include the corresponding testing room letter (e.g., experiment_data_A.csv). _hint:_ check out the `os` and `shutil` python libraries.
 2. Read in all the data from the newly copied data files.
 3. Calculate the following:
