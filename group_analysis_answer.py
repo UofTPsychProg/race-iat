@@ -81,6 +81,7 @@ mrt_inc = np.mean(data[data[:,2]==2,4])
 #%% 
 # calculate averages for interaction (category x congruency)
 # by using for loops and indexing/slicing!
+# hint: check out np.all() for combining multiple conditionals in an index
 #
 acc_int = np.zeros([2,2])
 mrt_int = np.zeros([2,2])
