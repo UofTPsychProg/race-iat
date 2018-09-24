@@ -14,12 +14,12 @@ Using python code, you need to:
 1. Copy these files into the rawdata directory, renaming each file to include the corresponding testing room letter (e.g., experiment_data_A.csv). _hint:_ check out the `os` and `shutil` python libraries.
 2. Read in all the data from the newly copied data files.
 3. Calculate the following:
-  * overall average accuracy and median RT
-  * averages of accuracy and median RT split by category (natural vs. man-made) using a `for` loop, `if` statement, and arthimetic
-  * averages of accuracy and median RT split by congruency (congruent vs. incongruent) using numpy's mean function
-  * averages for each of the four conditions using two `for` loops and `numpy`
+   * Overall average accuracy and median RT
+   * Averages of accuracy and median RT split by category (natural vs. man-made) using a `for` loop, `if` statement, and arthimetic
+   * Averages of accuracy and median RT split by congruency (congruent vs. incongruent) using numpy's mean function
+   * Averages for each of the four conditions using two `for` loops and `numpy`
 4. conduct t-tests to compare congruent vs. incongruent accuracy and RT for each category using `scipy.stats.ttest_rel()`
-5. print out all of the averages and t-test results in a coherent manner.
+5. Print out all of the averages and t-test results in a coherent manner.
 
 The analysis script skeleton repeats these instructions and gives you a few more pointers on how to accomplish these tasks. This is not a group assignment (everyone will make a pull request for their own submission), but you are strongly encouraged to help each other.
 
