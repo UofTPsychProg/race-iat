@@ -8,7 +8,8 @@ scene-cat problem set for PSY 1210 - Fall 2018
 
 #%% import block 
 import numpy as np
-from scipy import stats
+import scipy as sp
+import scipy.stats
 import os
 import shutil
 
@@ -24,7 +25,7 @@ for room in testingrooms:
 
 #%%
 # read in all the data files in rawdata directory using a for loop
-# columns: subject, category, congruency, accuracy, median RT
+# columns: subject, stimulus, pairing, accuracy, median RT
 #
 data = np.empty((0,5))
 for room in testingrooms:
@@ -39,50 +40,49 @@ mrt_avg = ...   # 477.3ms
 
 
 #%%
-# calculate averages (accuracy & RT) split by category using a for loop and an 
+# calculate averages (accuracy & RT) split by stimulus using a for loop and an 
 # if statement. (i.e., loop through the data to make a sum for each condition, 
 # then divide by the number of data points going into the sum)
 #
 ...
 
-# natural: 88.6%, 489.4ms   man-made: 94.4%, 465.3ms
+# words: 88.6%, 489.4ms   faces: 94.4%, 465.3ms
 
 
 #%%
 # calculate averages (accuracy & RT) split by congruency using indexing, 
 # slicing, and numpy's mean function 
+# wp - white/pleasant, bp - black/pleasant
 # (hint: only one line of code is needed per average)
 #
-acc_con = ...  # 94.0%
-acc_inc = ...  # 88.9%
-mrt_con = ...  # 469.6ms
-mrt_inc = ...  # 485.1ms
+acc_wp = ...  # 94.0%
+acc_bp = ...  # 88.9%
+mrt_wp = ...  # 469.6ms
+mrt_bp = ...  # 485.1ms
 
 
 #%% 
-# calculate average median RT for each of the four conditions:
-# natural/congruent, natural/incongruent, man-made/congruent, man-made-incongruent
+# calculate average median RT for each of the four conditions
 # use for loops, indexing/slicing, or both!
-# (hint: it might be easier to slice the data into separate natural 
-# and man-made dataset variables...)
+# (hint: might be easier to slice data into separate words and faces datasets)
 #
 ...
 
-# natural/congruent: 478.4ms
-# natural/incongruent: 500.3ms
-# man-made/congruent: 460.8ms
-# man-made/incogruent: 469.9ms
+# words - white/pleasant: 478.4ms
+# words - black/pleasant: 500.3ms
+# faces - white/pleasant: 460.8ms
+# faces - black/pleasant: 469.9ms
 
 
 #%%        
-# compare congruency conditions' effect on RT within categories using scipy's 
+# compare pairing conditions' effect on RT within stimulus using scipy's 
 # paired-sample t-test: scipy.stats.ttest_rel()
 #
 import scipy.stats
 ...
 
-# natural: t=-5.36, p=2.19e-5
-# man-made: t=-2.84, p=0.0096
+# words: t=-5.36, p=2.19e-5
+# faces: t=-2.84, p=0.0096
 
 
 #%%
