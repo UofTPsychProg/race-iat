@@ -1,5 +1,5 @@
 # scene-cat
-PSY 1210 Fall 2018 Assignment 2
+PSY 1210 Problem Assignment 2
 
 We're giving you some data files and the skeleton of a data analysis script. You need to flesh out the missing sections of the analysis script to implement a simple analysis of the data.
 
